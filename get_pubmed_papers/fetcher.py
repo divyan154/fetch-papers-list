@@ -1,6 +1,7 @@
 import requests
 from typing import List, Dict
 from xml.etree import ElementTree as ET
+from get_pubmed_papers.parser import parse_authors_and_affiliations
 
 BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
@@ -36,15 +37,18 @@ def fetch_papers(query: str, debug: bool = False) -> List[Dict]:
         pmid = article.findtext(".//PMID")
         title = article.findtext(".//ArticleTitle")
         pubdate = article.findtext(".//PubDate/Year") or "N/A"
+        authors, companies, emails = parse_authors_and_affiliations(article)
 
         # Placeholder — you’ll update with parser later
         results.append({
             "PubmedID": pmid,
             "Title": title,
             "Publication Date": pubdate,
-            "Non-academic Author(s)": "",
-            "Company Affiliation(s)": "",
-            "Corresponding Author Email": ""
+            "Non-academic Author(s)": "; ".join(authors) if authors else "N/A",
+            "Company Affiliation(s)": "; ".join(companies) if companies else "N/A",
+            "Corresponding Author Email": "; ".join(emails) if emails else "N/A",
+            
         })
 
     return results
+# 40637021
