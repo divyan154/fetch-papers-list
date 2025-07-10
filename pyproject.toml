@@ -1,0 +1,24 @@
+[project]
+name = "get-papers-list"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Divyansh sharma ",email = "divyanshsharmakotarajasthan@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests (>=2.32.4,<3.0.0)",
+    "pandas (>=2.3.1,<3.0.0)",
+    "typer[all] (>=0.16.0,<0.17.0)",
+    "lxml (>=6.0.0,<7.0.0)",
+    "xmltodict (>=0.14.2,<0.15.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+get-papers-list = "get_papers_list.cli:main"
