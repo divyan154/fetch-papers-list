@@ -1,0 +1,32 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Poetry and virtual environments
+poetry.lock
+.env
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Jupyter notebook checkpoints (optional)
+.ipynb_checkpoints/
+
+# Log or output files (if any)
+*.log
+*.csv
+*.tmp
