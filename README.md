@@ -14,7 +14,7 @@ This tool allows users to:
 - Search PubMed for papers by keyword
 - Extract author affiliations and metadata
 - Filter for company-affiliated papers
-- Export data to **CSV** or **JSON**
+- Export data to **CSV** 
 
 ---
 
