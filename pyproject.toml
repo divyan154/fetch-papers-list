@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "get-pubmed-papers"
-version = "0.1.0"
+version = "0.1.1"
 description = "A CLI tool to fetch PubMed papers and export company-affiliated data."
 authors = ["Divyansh sharma <divyansh.sharma9654@gmail.com>"]
 readme = "README.md"
@@ -10,9 +10,10 @@ repository = "https://github.com/yourusername/get-papers-list"
     packages = [{ include = "get_pubmed_papers" }]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 typer = "^0.12.3"
 requests = "^2.31"
+pandas = "^2.2"
 
 [tool.poetry.scripts]
 get-pubmed-papers = "get_pubmed_papers.cli:app"
